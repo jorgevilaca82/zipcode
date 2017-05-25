@@ -120,7 +120,7 @@ class ZipCode implements ZipCodeContract {
                 {
                     return null;
                 }
-                return json_encode($getCache, JSON_PRETTY_PRINT);
+                return $getCache;
             }
         }
         else
