@@ -128,7 +128,7 @@ class ZipCode implements ZipCodeContract {
             $response = $this->clientInterface->get($this->url());
             if ($response->getStatusCode() === 200)
             {
-                $getResponse = $response->getBody();                                               
+                $getResponse = $response->getBody()->getContents();                                               
                 $this->cacheManager->put('zipcode_' . $this->value, $getResponse, 86400);
                 if (isset($getResponse['erro']) && $getResponse['erro'] == true)
                 {
