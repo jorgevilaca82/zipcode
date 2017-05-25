@@ -16,7 +16,7 @@ class ZipCodeInfo implements ZipCodeInfoContract {
      * @param string $valueJson
      * @throws ZipCodeException
      */
-    public function __construct($valueJson) 
+    public function __construct($valueJson)
     {
 
         if (is_string($valueJson))
@@ -44,9 +44,9 @@ class ZipCodeInfo implements ZipCodeInfoContract {
     {
         if (!is_null($this->valueJson))
         {
-            return $this->valueJson;    
+            return $this->valueJson;
         }
-        return null;        
+        return null;
     }
 
     /**
@@ -87,19 +87,19 @@ class ZipCodeInfo implements ZipCodeInfoContract {
         return null;
 
     }
-	
-    /**     
+
+    /**
      * validate zipcode format
      *
      * @return bool
      */
-    private function json_validate_zipcode() 
+    private function json_validate_zipcode()
     {
 
-        if (is_string($this->valueJson)) 
+        if (is_string($this->valueJson))
         {
-            $ret = @json_decode($this->valueJson, true);            
-            return (json_last_error() === JSON_ERROR_NONE && 
+            $ret = @json_decode($this->valueJson, true);
+            return (json_last_error() === JSON_ERROR_NONE &&
                     isset($ret['cep']) &&
                     isset($ret['logradouro']) &&
                     isset($ret['complemento']) &&
